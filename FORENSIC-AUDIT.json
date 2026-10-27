@@ -138,11 +138,18 @@
     },
     "ubsan": {
       "repository": "Calendar-Chinese",
-      "operations": 25305,
+      "operations": 25779,
       "invariant_failures": 0,
       "examples": []
     },
     "locale_rendering_cases": 195,
-    "locale_failures": 0
+    "locale_failures": 0,
+    "projection_compatibility": {
+      "repository": "Calendar-Chinese",
+      "cases": 4627,
+      "regressions": 0,
+      "examples": [],
+      "legacy_identity_defects_corrected": []
+    }
   }
 }
