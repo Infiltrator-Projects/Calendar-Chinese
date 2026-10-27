@@ -1,24 +1,21 @@
-# Traditional Chinese Lunisolar Calendar: forensic audit, 27 October 2026
+# Traditional Chinese Lunisolar Calendar: forensic requalification, 27 October 2026
 
-The provider was built and exercised independently on Linux x86-64 with GCC 13, GLib 2.80 and ICU 74.2 where applicable. Compilation, ABI integrity, model conformance and historical authority are separate findings.
+The previously reproduced ICU 74 date discrepancies are corrected in this provider's owned chronology. The original Common source remains unchanged.
 
-`make check` runs 84 baseline regression cases plus 116 independently sourced model fixtures. Calendar providers also check the failure-output contract. The broader audit used the counts and limits in [FORENSIC-AUDIT.json](../FORENSIC-AUDIT.json).
+- 73,049 daily reference-date checks passed against HKO Gregorian 1901–2100.
+- 54,217 period/year/start navigation checks and 4,948 numeric day-format checks passed.
+- 2,324 month-navigation checks across the 1900 and 2101 joins passed, with no tested date discontinuities.
+- The updated UBSan/domain/failure-contract audit found no failures; UTF-8/length/capacity checks passed under 13 locale settings.
+- `make check` includes the daily published-month fixture checker. `make audit-authorities` now passes all formerly failing recorded cases.
 
-## Corrections
+## Implementation and scope
 
-- Resolve ICU lazy fields before restoring/clamping a destination day; month navigation now moves and clamps correctly.
+Provider-owned Chinese lunisolar year data for 1900–2100, independently checked against the HKO 1901–2100 published tables; ICU supplies locale text and the retained projection outside that year table.
 
-## Accuracy boundaries and unresolved findings
+The table is packed from Unicode ICU4X year facts, whose source URLs and hashes are retained in `LUNAR-DATA-PROVENANCE.json`. Independent government/table data are stored as compact month references in `tests/published-months.json`; they do not come from provider output. Unicode license notices are retained in `licenses/Unicode-3.0.txt`.
 
-- Confirmed HKO table disagreements on ICU 74. Run make audit-authorities to reproduce; these are not hidden by the passing model tests.
-- Finite sampled checks establish only the stated model/ranges. They do not certify every historical region, all translations, every host ICU/CLDR release, or another operating system/architecture.
+Period navigation uses month ordinals, including intercalary months. Year navigation preserves the existing policy: if a leap month is absent in the target year, use the following ordinary month. Day numbers clamp to the target month's length. Localized month/cycle/day text is composed from checked ICU text samples, retaining the real JDN weekday; it cannot replace the owned date with ICU's approximate date.
 
-`make audit-authorities` deliberately returns a failure while the recorded reference disagreements remain. The expected fields and source links are in `tests/authority-cases.json`. An ICU parity test is not independent proof of historical correctness.
+Finite tests establish the stated model and checked ranges. They do not certify every historical regional calendar, future official changes, every ICU/CLDR version or another operating system. Date-only JDN fields do not implement an intraday sunset rollover.
 
-## Provenance and reproducibility
-
-The original Common 1.19.78 source remains unchanged. Source-manifest hashes describe the initial extraction; subsequent corrections are recorded by Git and this audit. Original copy-comparison results are historical evidence of the extraction, not a claim that corrected code remains behavior-identical to Common.
-
-28 baseline observations changed following documented corrections. Independent model/contract fixtures cover those bug classes.
-
-Relevant authorities: [calendrical](https://reingold.co/calendars.shtml), [convertdate](https://convertdate.readthedocs.io/), [ICU](https://unicode-org.github.io/icu/userguide/datetime/calendar/), [NOAA](https://gml.noaa.gov/grad/solcalc/solareqns.PDF), [USNO](https://aa.usno.navy.mil/faq/GAST), [NAOJ](https://eco.mtk.nao.ac.jp/koyomi/wiki/C7F6CCC02FCCEBCCC0A4C8C6FCCAEB.html), [BWC](https://bahai-library.com/pdf/uhj/uhj_bahai_dates_172-221.pdf), [HKO](https://www.hko.gov.hk/en/gts/time/conversion.htm), [KASI](https://astro.kasi.re.kr/life/pageView/5?search_year=2017&search_month=02&search_dp=1&search_check=G), [HijriDate](https://hijridate.readthedocs.io/en/stable/background.html), [Persian](https://github.com/unicode-org/icu/blob/main/icu4c/source/i18n/persncal.cpp).
+The HKO English text omits 2069-12-30. That single lunar day is uniquely inferred as 17 from 2069-12-29/day 16 and 2069-12-31/day 18. The report distinguishes 73,048 directly published rows from this one derived row.

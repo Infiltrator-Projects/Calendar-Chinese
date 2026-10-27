@@ -4,8 +4,70 @@
   "id": "chinese",
   "name": "Traditional Chinese Lunisolar Calendar",
   "kind": "calendar",
-  "base_commit": "47fa8dc5ae60324194ea109ce35e7caed0c26f56",
+  "base_commit": "7c65c03335192c1ccc9e76c15bd48448c27ec41e",
   "model_checks": {
+    "reference_cases": 73049,
+    "reference_mismatches": 0,
+    "reference": "HKO Gregorian 1901–2100",
+    "method": "Independent source-day fields versus owned packed-year implementation"
+  },
+  "navigation": {
+    "cases": 54217,
+    "failures": 0,
+    "method": "Independently enumerated published month periods, day clamping, leap-month policy"
+  },
+  "external_comparisons": [
+    {
+      "reference": "HKO Gregorian 1901–2100",
+      "cases": 73049,
+      "mismatches": 0
+    }
+  ],
+  "undefined_behavior_and_invariants": {
+    "repository": "Calendar-Chinese",
+    "operations": 25812,
+    "invariant_failures": 0,
+    "exit": 0
+  },
+  "locale_rendering": {
+    "locales": 13,
+    "cases": 195,
+    "failures": 0
+  },
+  "independent_fixture_count": 116,
+  "authority_fixture_count": 3,
+  "corrections": [
+    "Resolve ICU lazy fields before restoring/clamping a destination day; month navigation now moves and clamps correctly.",
+    "Replace approximate ICU astronomy with owned packed year facts for 1900–2100. Fields, month/year navigation, starts and localized text use the same chronology; joins to the retained projection are tested."
+  ],
+  "limitations": [
+    "Owned lunar-year facts cover 1900–2100; outside that table, the existing ICU projection is retained and is not independently certified as historical truth.",
+    "Matching published future calendar predictions does not guarantee future promulgations or Earth-rotation assumptions.",
+    "Locale text is supplied by the installed ICU/CLDR; fields and navigation in the owned range do not use ICU astronomy.",
+    "73,048 HKO text rows were checked directly. The omitted 2069-12-30 row is separately identified as a unique inference from adjacent lunar day numbers 16 and 18, not claimed as a directly published row."
+  ],
+  "source_changes": [
+    "src/calendars/engine/icu-calendar.c",
+    "src/calendars/engine/icu-calendar.h",
+    "src/calendars/engine/icu-compat-bridge.c",
+    "src/lunar-data.h",
+    "src/provider.c"
+  ],
+  "baseline_cases_updated": 28,
+  "references": {
+    "calendrical": "https://reingold.co/calendars.shtml",
+    "convertdate": "https://convertdate.readthedocs.io/",
+    "ICU": "https://unicode-org.github.io/icu/userguide/datetime/calendar/",
+    "NOAA": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+    "USNO": "https://aa.usno.navy.mil/faq/GAST",
+    "NAOJ": "https://eco.mtk.nao.ac.jp/koyomi/wiki/C7F6CCC02FCCEBCCC0A4C8C6FCCAEB.html",
+    "BWC": "https://bahai-library.com/pdf/uhj/uhj_bahai_dates_172-221.pdf",
+    "HKO": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
+    "KASI": "https://astro.kasi.re.kr/life/pageView/5?search_year=2017&search_month=02&search_dp=1&search_check=G",
+    "HijriDate": "https://hijridate.readthedocs.io/en/stable/background.html",
+    "Persian": "https://github.com/unicode-org/icu/blob/main/icu4c/source/i18n/persncal.cpp"
+  },
+  "phase_one_model_checks": {
     "repository": "Calendar-Chinese",
     "id": "chinese",
     "reference_cases": 29256,
@@ -14,13 +76,7 @@
     "navigation_failures": 0,
     "model_notes": []
   },
-  "navigation": {
-    "repository": "Calendar-Chinese",
-    "id": "chinese",
-    "cases": 946,
-    "failures": 0
-  },
-  "external_comparisons": [
+  "phase_one_external_comparisons": [
     {
       "repository": "Calendar-Chinese",
       "reference": "lunardate 0.3.0",
@@ -64,41 +120,29 @@
       }
     }
   ],
-  "undefined_behavior_and_invariants": {
+  "phase_one_navigation": {
     "repository": "Calendar-Chinese",
-    "operations": 25812,
-    "invariant_failures": 0,
-    "exit": 0
-  },
-  "locale_rendering": {
-    "locales": 13,
-    "cases": 195,
+    "id": "chinese",
+    "cases": 946,
     "failures": 0
   },
-  "independent_fixture_count": 116,
-  "authority_fixture_count": 3,
-  "corrections": [
-    "Resolve ICU lazy fields before restoring/clamping a destination day; month navigation now moves and clamps correctly."
-  ],
-  "limitations": [
-    "Confirmed HKO table disagreements on ICU 74. Run make audit-authorities to reproduce; these are not hidden by the passing model tests.",
-    "Finite sampled checks establish only the stated model/ranges. They do not certify every historical region, all translations, every host ICU/CLDR release, or another operating system/architecture."
-  ],
-  "source_changes": [
-    "src/calendars/engine/icu-calendar.c"
-  ],
-  "baseline_cases_updated": 28,
-  "references": {
-    "calendrical": "https://reingold.co/calendars.shtml",
-    "convertdate": "https://convertdate.readthedocs.io/",
-    "ICU": "https://unicode-org.github.io/icu/userguide/datetime/calendar/",
-    "NOAA": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
-    "USNO": "https://aa.usno.navy.mil/faq/GAST",
-    "NAOJ": "https://eco.mtk.nao.ac.jp/koyomi/wiki/C7F6CCC02FCCEBCCC0A4C8C6FCCAEB.html",
-    "BWC": "https://bahai-library.com/pdf/uhj/uhj_bahai_dates_172-221.pdf",
-    "HKO": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
-    "KASI": "https://astro.kasi.re.kr/life/pageView/5?search_year=2017&search_month=02&search_dp=1&search_check=G",
-    "HijriDate": "https://hijridate.readthedocs.io/en/stable/background.html",
-    "Persian": "https://github.com/unicode-org/icu/blob/main/icu4c/source/i18n/persncal.cpp"
+  "current_requalification": {
+    "published_date_checks": 73049,
+    "navigation_checks": 54217,
+    "day_format_checks": 4948,
+    "projection_seam": {
+      "repository": "Calendar-Chinese",
+      "cases": 2324,
+      "failures": [],
+      "continuity_errors": []
+    },
+    "ubsan": {
+      "repository": "Calendar-Chinese",
+      "operations": 25305,
+      "invariant_failures": 0,
+      "examples": []
+    },
+    "locale_rendering_cases": 195,
+    "locale_failures": 0
   }
 }

@@ -22,3 +22,7 @@ The comparison verifies that splitting and copying the code preserved the existi
 - [ ] Publish only artifacts from an explicitly qualified release state.
 
 No Common files are removed or modified by this copy. See [source record](../SOURCE.md) and [machine-readable results](../VALIDATION-RESULTS.json) for exact evidence and host limitations.
+
+## Owned lunar chronology requalification
+
+Provider-owned Chinese lunisolar year data for 1900–2100, independently checked against the HKO 1901–2100 published tables; ICU supplies locale text and the retained projection outside that year table. The current implementation and test counts are described in `FORENSIC-AUDIT.md`. Initial extraction hashes and copy-comparison results remain historical provenance.

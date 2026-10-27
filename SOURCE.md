@@ -38,3 +38,7 @@ The build directly creates `build/Traditional Chinese Lunisolar Calendar.so`. IC
 - Common's existing calendar and clock module suites passed against the complete set of 54 independently built copies: **6 calendar tests and 16 clock tests**.
 
 See `VALIDATION-RESULTS.json` for the tested host and exact source revision. This verifies the copy against the existing implementation; it is not an additional historical-fidelity audit or a cross-platform release qualification.
+
+## Owned lunar chronology requalification
+
+Provider-owned Chinese lunisolar year data for 1900–2100, independently checked against the HKO 1901–2100 published tables; ICU supplies locale text and the retained projection outside that year table. The current implementation and test counts are described in `docs/FORENSIC-AUDIT.md`. Initial extraction hashes and copy-comparison results remain historical provenance.

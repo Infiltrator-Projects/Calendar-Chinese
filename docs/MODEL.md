@@ -9,7 +9,7 @@
 
 ## Maintained model
 
-ICU Chinese computational lunisolar calendar with locale-specific cyclic year names.
+Provider-owned Chinese lunisolar year data for 1900–2100, independently checked against the HKO 1901–2100 published tables; ICU supplies locale text and the retained projection outside that year table.
 
 ## Historical scope / fidelity limitation
 
