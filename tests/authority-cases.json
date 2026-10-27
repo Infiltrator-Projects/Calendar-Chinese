@@ -1,0 +1,50 @@
+[
+  {
+    "op": "fields",
+    "args": [
+      2458430
+    ],
+    "expected": [
+      true,
+      35,
+      9,
+      30,
+      78,
+      false
+    ],
+    "source": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
+    "date": "2018-11-07"
+  },
+  {
+    "op": "fields",
+    "args": [
+      2461443
+    ],
+    "expected": [
+      true,
+      44,
+      1,
+      1,
+      78,
+      false
+    ],
+    "source": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
+    "date": "2027-02-06"
+  },
+  {
+    "op": "fields",
+    "args": [
+      2472635
+    ],
+    "expected": [
+      true,
+      14,
+      9,
+      1,
+      79,
+      false
+    ],
+    "source": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
+    "date": "2057-09-28"
+  }
+]

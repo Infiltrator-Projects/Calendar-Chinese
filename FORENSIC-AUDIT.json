@@ -1,0 +1,104 @@
+{
+  "date": "2026-10-27",
+  "repository": "Calendar-Chinese",
+  "id": "chinese",
+  "name": "Traditional Chinese Lunisolar Calendar",
+  "kind": "calendar",
+  "base_commit": "47fa8dc5ae60324194ea109ce35e7caed0c26f56",
+  "model_checks": {
+    "repository": "Calendar-Chinese",
+    "id": "chinese",
+    "reference_cases": 29256,
+    "reference_mismatches": 0,
+    "navigation_cases": 1140,
+    "navigation_failures": 0,
+    "model_notes": []
+  },
+  "navigation": {
+    "repository": "Calendar-Chinese",
+    "id": "chinese",
+    "cases": 946,
+    "failures": 0
+  },
+  "external_comparisons": [
+    {
+      "repository": "Calendar-Chinese",
+      "reference": "lunardate 0.3.0",
+      "cases": 73019,
+      "mismatches": 537,
+      "mismatch_years": {
+        "1917": 59,
+        "1922": 59,
+        "1933": 30,
+        "1954": 60,
+        "1955": 30,
+        "1978": 30,
+        "1987": 59,
+        "1999": 30,
+        "2012": 30,
+        "2018": 30,
+        "2027": 30,
+        "2030": 30,
+        "2057": 30,
+        "2070": 30
+      }
+    },
+    {
+      "repository": "Calendar-Chinese",
+      "reference": "Hong Kong Observatory daily tables, 17 selected years incl. all lunardate disagreement years",
+      "cases": 6207,
+      "mismatches": 447,
+      "mismatch_years": {
+        "1917": 59,
+        "1922": 59,
+        "1954": 30,
+        "1955": 30,
+        "1987": 59,
+        "1999": 30,
+        "2012": 30,
+        "2018": 30,
+        "2027": 30,
+        "2030": 30,
+        "2057": 30,
+        "2070": 30
+      }
+    }
+  ],
+  "undefined_behavior_and_invariants": {
+    "repository": "Calendar-Chinese",
+    "operations": 25812,
+    "invariant_failures": 0,
+    "exit": 0
+  },
+  "locale_rendering": {
+    "locales": 13,
+    "cases": 195,
+    "failures": 0
+  },
+  "independent_fixture_count": 116,
+  "authority_fixture_count": 3,
+  "corrections": [
+    "Resolve ICU lazy fields before restoring/clamping a destination day; month navigation now moves and clamps correctly."
+  ],
+  "limitations": [
+    "Confirmed HKO table disagreements on ICU 74. Run make audit-authorities to reproduce; these are not hidden by the passing model tests.",
+    "Finite sampled checks establish only the stated model/ranges. They do not certify every historical region, all translations, every host ICU/CLDR release, or another operating system/architecture."
+  ],
+  "source_changes": [
+    "src/calendars/engine/icu-calendar.c"
+  ],
+  "baseline_cases_updated": 28,
+  "references": {
+    "calendrical": "https://reingold.co/calendars.shtml",
+    "convertdate": "https://convertdate.readthedocs.io/",
+    "ICU": "https://unicode-org.github.io/icu/userguide/datetime/calendar/",
+    "NOAA": "https://gml.noaa.gov/grad/solcalc/solareqns.PDF",
+    "USNO": "https://aa.usno.navy.mil/faq/GAST",
+    "NAOJ": "https://eco.mtk.nao.ac.jp/koyomi/wiki/C7F6CCC02FCCEBCCC0A4C8C6FCCAEB.html",
+    "BWC": "https://bahai-library.com/pdf/uhj/uhj_bahai_dates_172-221.pdf",
+    "HKO": "https://www.hko.gov.hk/en/gts/time/conversion.htm",
+    "KASI": "https://astro.kasi.re.kr/life/pageView/5?search_year=2017&search_month=02&search_dp=1&search_check=G",
+    "HijriDate": "https://hijridate.readthedocs.io/en/stable/background.html",
+    "Persian": "https://github.com/unicode-org/icu/blob/main/icu4c/source/i18n/persncal.cpp"
+  }
+}
