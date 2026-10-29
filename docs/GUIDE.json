@@ -1,0 +1,29 @@
+{
+  "title": "Traditional Chinese Lunisolar Calendar",
+  "intro": "The traditional Chinese calendar follows the Moon's months while staying connected to the Sun's seasons. It is not simply a lunar calendar and its months do not follow the fixed January-to-December pattern.",
+  "diagram": "lunisolar",
+  "diagram_caption": "LUNAR MONTHS + SOLAR SEASONS",
+  "caption_detail": "Month boundaries follow the lunar cycle. In some years, an additional (leap) month keeps the seasonal cycle aligned.",
+  "steps": [
+    {
+      "heading": "Watch the changing Moon",
+      "text": "A lunar month starts around a new moon and usually has 29 or 30 days. The dates are not fixed to the Gregorian month."
+    },
+    {
+      "heading": "Connect the year to the seasons",
+      "text": "Solar terms help determine how lunar months relate to the solar year. Chinese New Year falls on different Gregorian dates."
+    },
+    {
+      "heading": "Understand a leap month",
+      "text": "Some years contain 13 lunar months instead of 12. The extra month is assigned under calendrical rules; it is not the same as a leap day."
+    }
+  ],
+  "example": "A lunar month can begin in late January or February on the Gregorian calendar. A leap month is an extra whole lunar month; a date therefore needs its year, month and leap-month status to be unambiguous.",
+  "history": "Chinese lunisolar reckoning has a long history and has been important for traditional festivals and cultural observances. Methods and official rules have changed over time; this is a model of a defined Chinese calendar convention, not a claim to reproduce every regional calendar in history.",
+  "model": "For 1900-2100, this provider owns year data. Published Hong Kong Observatory conversion tables from 1901-2100 have been used for independent checking. ICU supplies locale text and a projection beyond the owned table.",
+  "limits": "Different historical localities and calendar reforms are not independently certified. Outside the table, projected dates are not guaranteed to match future official announcements. Modern civic and legal dates generally use the Gregorian calendar.",
+  "sources": [
+    "Hong Kong Observatory conversion tables: https://www.hko.gov.hk/en/gts/time/conversion.htm",
+    "Provider model and evidence: https://github.com/Infiltrator-Projects/Calendar-Chinese/blob/main/docs/MODEL.md"
+  ]
+}
