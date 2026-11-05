@@ -314,7 +314,7 @@
       "selected_definitions": []
     }
   ],
-  "copy_method": "Original copied-file hashes remain historical; Common 1.19.80 is an actual pinned submodule and build dependency.",
+  "copy_method": "Original copied-file hashes remain historical; Common 1.19.81 is an actual pinned submodule and build dependency.",
   "verification": {
     "repository": "Calendar-Chinese",
     "compared_observations": 883,
@@ -329,8 +329,8 @@
   "common_dependency": {
     "type": "git-submodule",
     "path": "common",
-    "revision": "dc4aac326964ca4400b6e21851d16eea674040c8",
-    "version": "1.19.80",
+    "revision": "a99ef676b0e43c7e645c81756e3fd38be0a54406",
+    "version": "1.19.81",
     "linkage": "static"
   }
 }
