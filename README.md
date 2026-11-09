@@ -48,4 +48,4 @@ Each package owns only this provider and its passive documentation. Its `Replace
 
 ## Two-file installed guide
 
-The installation owns exactly `/System/Resources/Calendars/Traditional Chinese Lunisolar Calendar.so` and `/System/Resources/Documentation/Calendar-Chinese.pdfTraditional Chinese Lunisolar Calendar.pdf`. The readable illustrated guide comes from `docs/GUIDE.json`; engineering documentation stays in source control.
+The installation owns exactly `/System/Resources/Calendars/Traditional Chinese Lunisolar Calendar.so` and `/System/Resources/Documentation/Calendar-Chinese.pdf`. The readable illustrated guide comes from `docs/GUIDE.json`; engineering documentation stays in source control.
