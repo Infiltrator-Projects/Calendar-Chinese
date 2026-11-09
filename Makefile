@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Clock-specific logic stays local; Common owns generic code and ABI.
+# Chinese calendar logic stays local; Common owns generic code and ABI.
 .DEFAULT_GOAL := all
 CC ?= cc
 PKG_CONFIG ?= pkg-config
