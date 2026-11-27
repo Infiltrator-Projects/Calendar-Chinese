@@ -17,10 +17,11 @@
   ],
   "example": "A date in a leap-month year needs its year, month, day and leap-month status to identify it unambiguously.",
   "history": "Chinese lunisolar dating has long been important for festivals and cultural observances. Its methods and official rules have changed across history.",
-  "model": "The provider owns year data for 1900–2100, independently checked against HKO conversion tables for 1901–2100. ICU supplies locale text and projection beyond the table.",
-  "limits": "Retrospective results do not certify historical reforms or localities. Future projections beyond the table may differ from official announcements. Modern civic dates generally use Gregorian notation.",
+  "model": "The provider owns year data for 1900–2100, independently checked against HKO conversion tables for 1901–2100. ICU supplies locale text and projection beyond the table. Month navigation counts each intercalary month separately. Year navigation from a leap month absent in the destination year selects the following ordinary month, and day numbers clamp to the target month length. Zero-step navigation preserves the date.",
+  "limits": "Retrospective results do not certify historical reforms or localities. Future projections beyond the table may differ from official announcements. Modern civic dates generally use Gregorian notation. The date-only representation does not implement a sunset rollover.",
   "sources": [
     "Hong Kong Observatory conversion tables: https://www.hko.gov.hk/en/gts/time/conversion.htm",
-    "Provider model and evidence: https://github.com/Infiltrator-Projects/Calendar-Chinese/blob/main/docs/MODEL.md"
+    "Provider model and evidence: https://github.com/Infiltrator-Projects/Calendar-Chinese/blob/main/docs/MODEL.md",
+    "Historical qualification: https://github.com/Infiltrator-Projects/Calendar-Chinese/blob/main/docs/FORENSIC-AUDIT.md"
   ]
 }
