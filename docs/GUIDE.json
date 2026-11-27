@@ -1,9 +1,6 @@
 {
   "title": "Traditional Chinese Lunisolar Calendar",
   "intro": "Traditional Chinese lunisolar reckoning determines months from the Moon and relates the year to solar seasons.",
-  "diagram": "lunisolar",
-  "diagram_caption": "LUNAR MONTHS + SOLAR SEASONS",
-  "caption_detail": "The illustrated cycle shows the relationship of lunar months to the seasonal year.",
   "steps": [
     {
       "heading": "Watch the changing Moon",
