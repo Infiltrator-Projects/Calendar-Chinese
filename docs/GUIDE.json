@@ -1,27 +1,27 @@
 {
   "title": "Traditional Chinese Lunisolar Calendar",
-  "intro": "The traditional Chinese calendar follows the Moon's months while staying connected to the Sun's seasons. It is not simply a lunar calendar and its months do not follow the fixed January-to-December pattern.",
+  "intro": "Traditional Chinese lunisolar reckoning determines months from the Moon and relates the year to solar seasons.",
   "diagram": "lunisolar",
   "diagram_caption": "LUNAR MONTHS + SOLAR SEASONS",
-  "caption_detail": "Month boundaries follow the lunar cycle. In some years, an additional (leap) month keeps the seasonal cycle aligned.",
+  "caption_detail": "The illustrated cycle shows the relationship of lunar months to the seasonal year.",
   "steps": [
     {
       "heading": "Watch the changing Moon",
-      "text": "A lunar month starts around a new moon and usually has 29 or 30 days. The dates are not fixed to the Gregorian month."
+      "text": "A lunar month begins around a new moon and usually lasts 29 or 30 days."
     },
     {
       "heading": "Connect the year to the seasons",
-      "text": "Solar terms help determine how lunar months relate to the solar year. Chinese New Year falls on different Gregorian dates."
+      "text": "Solar terms help determine the relation of lunar months to the solar year; Chinese New Year moves relative to Gregorian dates."
     },
     {
       "heading": "Understand a leap month",
-      "text": "Some years contain 13 lunar months instead of 12. The extra month is assigned under calendrical rules; it is not the same as a leap day."
+      "text": "Certain years have thirteen months; the extra month is assigned by calendrical rules, not by adding a leap day."
     }
   ],
-  "example": "A lunar month can begin in late January or February on the Gregorian calendar. A leap month is an extra whole lunar month; a date therefore needs its year, month and leap-month status to be unambiguous.",
-  "history": "Chinese lunisolar reckoning has a long history and has been important for traditional festivals and cultural observances. Methods and official rules have changed over time; this is a model of a defined Chinese calendar convention, not a claim to reproduce every regional calendar in history.",
-  "model": "For 1900-2100, this provider owns year data. Published Hong Kong Observatory conversion tables from 1901-2100 have been used for independent checking. ICU supplies locale text and a projection beyond the owned table.",
-  "limits": "Different historical localities and calendar reforms are not independently certified. Outside the table, projected dates are not guaranteed to match future official announcements. Modern civic and legal dates generally use the Gregorian calendar.",
+  "example": "A date in a leap-month year needs its year, month, day and leap-month status to identify it unambiguously.",
+  "history": "Chinese lunisolar dating has long been important for festivals and cultural observances. Its methods and official rules have changed across history.",
+  "model": "The provider owns year data for 1900–2100, independently checked against HKO conversion tables for 1901–2100. ICU supplies locale text and projection beyond the table.",
+  "limits": "Retrospective results do not certify historical reforms or localities. Future projections beyond the table may differ from official announcements. Modern civic dates generally use Gregorian notation.",
   "sources": [
     "Hong Kong Observatory conversion tables: https://www.hko.gov.hk/en/gts/time/conversion.htm",
     "Provider model and evidence: https://github.com/Infiltrator-Projects/Calendar-Chinese/blob/main/docs/MODEL.md"
